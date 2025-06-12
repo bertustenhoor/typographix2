@@ -11,21 +11,21 @@ field.innerHTML = myDate;
 function darkMode() {
     document.documentElement.setAttribute('toggle-state', 'dark');
     themeIcon.classList.replace('fa-moon', 'fa-sun');
-    localStorage.setItem('theme', 'dark');
 }
 
 function lightMode() {
     document.documentElement.setAttribute('toggle-state', 'light');
     themeIcon.classList.replace('fa-sun', 'fa-moon');
-    localStorage.setItem('theme', 'light');
 }
 
 function toggleTheme() {
     const state = document.documentElement.getAttribute('toggle-state');
     if (!state || state === 'light') {
         darkMode();
+        localStorage.setItem('theme', 'dark');
     } else {
         lightMode();
+        localStorage.setItem('theme', 'light');
     }
 }
 
